@@ -3,7 +3,7 @@
 subject: 30 subjects participated in this study.<br/>
 1:30
 
-activity: 6 activities were tracked.<br/>
+activity: 6 activities were tracked for each subject.<br/>
 1            WALKING <br/>
 2   WALKING_UPSTAIRS <br/>
 3 WALKING_DOWNSTAIRS <br/>
