@@ -11,7 +11,7 @@ activity: 6 activities were tracked for each subject.<br/>
 5           STANDING <br/>
 6             LAYING <br/>
 
-features: 68 varibles were selected because they contain "-mean()" or "-std()", varibles names were modified to be descriptive. <br/>
+features: 66 feature varibles were selected because they contain "-mean()" or "-std()", varibles names were modified to be descriptive. <br/>
 timeBodyAccelerometerMeanX <br/>
 timeBodyAccelerometerMeanY <br/>
 timeBodyAccelerometerMeanZ <br/>
