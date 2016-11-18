@@ -29,7 +29,7 @@ trainData<-cbind(subjectTrain,yTrain,xTrain)
 testTrain<-rbind(testData,trainData)
 colnames(testTrain)<-c("subject","activity",features[,2])
 #2.Extracts only the measurements on the mean and standard deviation for each measurement.
-#match pattern on mean or std in features
+#match pattern on mean() or std in features
 wantedFeatures<-grep("mean\\(\\)|std",features$V2,value = TRUE)
 #extract data with mean or std in features
 wantedData<-testTrain[,c("subject","activity",wantedFeatures)]
@@ -37,6 +37,7 @@ wantedData<-testTrain[,c("subject","activity",wantedFeatures)]
 #turn activity vector into factor with levels and labels
 wantedData$activity<-factor(wantedData$activity,levels = activityLabels[,1],labels = activityLabels[,2])
 #4.Appropriately labels the data set with descriptive variable names.
+#substitute feature names with discriptive words
 names(wantedData)<-gsub("^t", "time", names(wantedData))
 names(wantedData)<-gsub("^f", "frequency", names(wantedData))
 names(wantedData)<-gsub("Acc", "Accelerometer", names(wantedData))
@@ -47,6 +48,9 @@ names(wantedData)<-gsub("-mean","Mean",names(wantedData))
 names(wantedData)<-gsub("-std","Std",names(wantedData))
 names(wantedData)<-gsub("[()-]","",names(wantedData))
 #5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+#calculate the mean of each variable for each activity and each subject
 results<-aggregate(.~subject+activity,wantedData,mean)
+#order the data frame based on subject in ascending order then activity in ascending order
 resultsData<-results[order(results$subject,results$activity),]
+#create end result as a text file
 write.table(resultsData,file = "tidydata.txt",row.names = FALSE)
