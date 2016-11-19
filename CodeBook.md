@@ -11,7 +11,7 @@
 5           STANDING <br/>
 6             LAYING <br/>
 
-**features**: 66 feature varibles were selected because they contain "-mean()" or "-std()", varibles names were modified to be descriptive. <br/>
+**features**: 66 feature varibles were selected because they contain "-mean()" or "-std()", varibles names were modified to be descriptive, below are all the selected feature varibles. <br/>
 timeBodyAccelerometerMeanX <br/>
 timeBodyAccelerometerMeanY <br/>
 timeBodyAccelerometerMeanZ <br/>
